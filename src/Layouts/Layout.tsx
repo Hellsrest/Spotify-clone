@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../Headers and Footers/Navbar";
+import Footer from "../Headers and Footers/Footer";
 import { createContext, useState, useEffect } from "react";
 
 interface UserDetails {

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
-import { defaultUserContext } from "./Layout";
+import { defaultUserContext } from "../Layouts/Layout";
 
 function Login() {
   const userdetailscontext = useContext(defaultUserContext);
@@ -69,6 +69,7 @@ function Login() {
       setUserDetails(userData);
       sessionStorage.setItem("userdetails", JSON.stringify(userData)); 
       console.log(data);
+      navigate("/main");
     }
   };
 
