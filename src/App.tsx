@@ -4,10 +4,15 @@ import AboutUs from "./LandingPages/AboutUs";
 import ContactUs from "./LandingPages/ContactUs";
 
 import Layout from "./Layouts/Layout";
+import MusicLayout from "./Layouts/MusicLayout";
 
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
+
 import MainHub from "./MusicHub/MainHub";
+import MusicUpload from "./MusicHub/MusicUpload";
+import MusicLiked from "./MusicHub/MusicLiked";
+
 function App() {
   return (
     <>
@@ -18,7 +23,9 @@ function App() {
           <Route path="/contactus" element={<Layout><ContactUs/></Layout>}/>
           <Route path="/login" element={<Layout><Login/></Layout>}/>
           <Route path="/register" element={<Layout><Register/></Layout>}/>
-          <Route path="/main" element={<Layout><MainHub/></Layout>}/>
+          <Route path="/main" element={<MusicLayout><MainHub/></MusicLayout>}/>
+          <Route path="/upload" element={<MusicLayout><MusicUpload/></MusicLayout>}/>
+          <Route path="/liked" element={<MusicLayout><MusicLiked/></MusicLayout>}/>
         </Routes>
       </Router>
     </>
