@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import User from "./Models/Users.js";
-
+import Music from "./Models/Musics.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -58,3 +58,25 @@ app.post("/register", async (req, res) => {
     }
   
 });
+
+app.post("/musicupload",async (req,res)=>{
+  const {trackname,tracklocation,trackuploader}=req.body;
+  try{
+    const umusic=new Music(
+      {
+        musicname:trackname,
+        musiclocation:tracklocation,
+        uploaderid:trackuploader,
+      }
+    );
+    const uploadedmusic=await umusic.save();
+    console.log(uploadedmusic);
+    if(uploadedmusic){
+      res.status(200).json({message:"Music uploaded succesfully"});
+    }
+    res.status(400);
+  }catch(error){
+    console.log(error);
+    res.status(500).json({message:"Music not uploaded succesfully"});
+  }
+})
