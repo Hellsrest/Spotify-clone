@@ -1,7 +1,9 @@
+import ActiveMusic from "./ActiveMusic/ActiveMusic";
+
 function MainHub(){
     return(
        <>
-        this is the main page
+       <ActiveMusic/>
        </>
        
       

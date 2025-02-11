@@ -1,0 +1,38 @@
+CRUD on User
+CRUD on Admin
+CRUD on Music
+
+Liking features on songs(user and admin can both like songs)
+Lyrics feature on songs(user and admn can both view the lyrics of songs)
+Playlits feature on songs(user and admn can both create playlist of multiple songs)
+
+User
+Creates account
+Logs in
+Listens to Music
+Likes Music
+Reads Lyrics
+Creates Playlists
+Edit account information
+View Others Account
+Account contains information like fav song, fav lyric, fav playlist
+
+Admin
+Creates account
+Logs in
+Listens to Music
+Likes Music
+Reads Lyrics
+Creates Playlists
+Edit account information
+View Others Account
+Account contains information like fav song, fav lyric, fav playlist
+Can promote Users to Admins
+
+Music
+Is uploaedd by either Admin or User
+Has properties like name, track duration, track description etc
+can be updated by admin or users who have uploaded music
+
+Some sort of music recomendation system
+

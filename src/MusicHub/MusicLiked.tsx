@@ -1,7 +1,7 @@
 function MusicLiked(){
     return(
        <>
-        this is the main page
+        this is the liked page
        </>
        
       

@@ -7,52 +7,53 @@ function MusicUpload() {
     throw new Error("useContext must be used within a Provider");
   }
 
-  interface umusic{
-    trackname:string,
-    tracklocation:string,
-    trackuploader:string|undefined,
-  }
-
   const { userdetails } = userdetailscontext;
   const [musicname, setMusicName] = useState("");
   const [Uploadedmusic, setUploadedmusic] = useState<string>("");
+  const [Uploadedmusicfile, setUploadedmusicfile] = useState<File | null>(null);
   const [trackname, setTrackname] = useState<string>("");
 
   function handelmusicname(e: React.ChangeEvent<HTMLInputElement>) {
     setMusicName(e.target.value);
   }
+
   function handelmusicupload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     console.log(file?.name);
     if (file) {
       const url = URL.createObjectURL(file);
       setUploadedmusic(url);
+      setUploadedmusicfile(file);
       setTrackname(file?.name);
     }
   }
 
-  const uploadMusic= async (e:React.MouseEvent<HTMLButtonElement>) =>{
+  const uploadMusic = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const music:umusic={
-        trackname:musicname,
-        tracklocation:trackname,
-        trackuploader:userdetails?.uid,
+    if (!Uploadedmusicfile) {
+      alert("No file selected.");
+      return;
     }
-    console.log(music);
-    const response=await fetch("http://localhost:5000/musicupload",{
-      method:"post",
-      headers:{
-        "content-type":"application/json",
-      },
-      body:JSON.stringify(music),
+    console.log(Uploadedmusicfile);
+    console.log(trackname);
+    console.log(userdetails?.uid);
+    const formData = new FormData();
+
+    formData.append("trackname", trackname);
+    formData.append("tracklocation", Uploadedmusicfile, Uploadedmusicfile.name);
+    formData.append("trackuploader", userdetails?.uid || "");
+
+    console.log(formData);
+    const response = await fetch("http://localhost:5000/musicupload", {
+      method: "post",
+      body: formData,
     });
     console.log(response);
-    if(response.ok){
-      const data=await response.json();
+    if (response.ok) {
+      const data = await response.json();
       console.log(data);
     }
-    }
-  
+  };
 
   return (
     <>
