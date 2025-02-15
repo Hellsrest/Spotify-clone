@@ -1,5 +1,5 @@
 import { defaultUserContext } from "../Layouts/MusicLayout";
-import { useContext, useState } from "react";
+import { useContext, useState , useEffect} from "react";
 
 function MusicUpload() {
   const userdetailscontext = useContext(defaultUserContext);
@@ -12,6 +12,7 @@ function MusicUpload() {
   const [Uploadedmusic, setUploadedmusic] = useState<string>("");
   const [Uploadedmusicfile, setUploadedmusicfile] = useState<File | null>(null);
   const [trackname, setTrackname] = useState<string>("");
+  const [musictitle, setMusictitle] = useState<string>("");
 
   function handelmusicname(e: React.ChangeEvent<HTMLInputElement>) {
     setMusicName(e.target.value);
@@ -25,6 +26,7 @@ function MusicUpload() {
       setUploadedmusic(url);
       setUploadedmusicfile(file);
       setTrackname(file?.name);
+      setMusictitle(musicname);
     }
   }
 
@@ -36,10 +38,12 @@ function MusicUpload() {
     }
     console.log(Uploadedmusicfile);
     console.log(trackname);
+    console.log(musictitle);
     console.log(userdetails?.uid);
     const formData = new FormData();
 
     formData.append("trackname", trackname);
+    formData.append("musictitle", musictitle);
     formData.append("tracklocation", Uploadedmusicfile, Uploadedmusicfile.name);
     formData.append("trackuploader", userdetails?.uid || "");
 
@@ -54,6 +58,10 @@ function MusicUpload() {
       console.log(data);
     }
   };
+
+  useEffect(() => {
+    setMusictitle(musicname);
+  }, [musicname]);
 
   return (
     <>

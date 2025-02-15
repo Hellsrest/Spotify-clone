@@ -10,13 +10,19 @@ function Navbar(){
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand d-flex align-items-center" href="/">
         <img
-          src="/logo-slug.png"
+          src="src\assets\logo\voltify-logo-image-only.png"
           width="50"
           height="50"
           className="d-inline-block align-top"
           alt="no logo found"
         />
-        <div className="ms-2">Chat App</div>
+         <img
+          src="src\assets\logo\voltify-logo-text-only.png"
+          width="50"
+          height="50"
+          className="d-inline-block align-top"
+          alt="no logo found"
+        />
       </a>
 
       <button

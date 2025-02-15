@@ -1,22 +1,42 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { defaultUserContext } from "../Layouts/MusicLayout";
 
-function MusicNavbar(){
+function MusicNavbar() {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  const userContext = useContext(defaultUserContext);
+  if (!userContext) {
+    throw new Error("MusicNavbar must be used within a Provider");
+  }
+
+  const { setUserDetails } = userContext;
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
+  
+  const logout = () => {
+    setUserDetails(null); 
+    sessionStorage.removeItem("userdetails"); 
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand d-flex align-items-center" href="/">
+      <a className="navbar-brand d-flex align-items-center" href="/main">
         <img
-          src="/logo-slug.png"
+          src="src/assets/logo/voltify-logo-image-only.png"
           width="50"
           height="50"
           className="d-inline-block align-top"
           alt="no logo found"
         />
-        <div className="ms-2">Chat App</div>
+        <img
+          src="src/assets/logo/voltify-logo-text-only.png"
+          width="50"
+          height="50"
+          className="d-inline-block align-top"
+          alt="no logo found"
+        />
       </a>
 
       <button
@@ -31,47 +51,27 @@ function MusicNavbar(){
       </button>
 
       <div
-        className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`}
+        className={`${isNavCollapsed ? "collapse" : ""} navbar-collapse`}
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <NavLink
-              to="/main"
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
+            <NavLink to="/main" className="nav-link">
               Home
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink
-              to="/upload"
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
+            <NavLink to="/upload" className="nav-link">
               Upload Songs
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink
-              to="/liked"
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
-              View liked
+            <NavLink to="/liked" className="nav-link">
+              View Liked
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
+            <NavLink to="/" className="nav-link" onClick={logout}>
               Log out
             </NavLink>
           </li>
@@ -79,6 +79,6 @@ function MusicNavbar(){
       </div>
     </nav>
   );
-};
+}
 
 export default MusicNavbar;

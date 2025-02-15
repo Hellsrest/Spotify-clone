@@ -60,6 +60,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
+//to upload music
 app.use("/uploads", express.static("public/uploads"));
 
 // 🔹 Set up Multer for file uploads
@@ -76,11 +77,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.post("/musicupload", upload.single("tracklocation"), async (req, res) => {
-  const { trackname, trackuploader } = req.body;
+  const { trackname,musictitle, trackuploader } = req.body;
   const tracklocation = req.file ? `/uploads/${req.file.filename}` : "";
   try {
     const umusic = new Music({
       musicname: trackname,
+      musictitle:musictitle,
       musiclocation: tracklocation,
       uploaderid: trackuploader,
     });
@@ -97,12 +99,12 @@ app.post("/musicupload", upload.single("tracklocation"), async (req, res) => {
 });
 
 // to get the music from db
-app.get("/activemusic",async(res)=>{
-  try{
-    const music= await Music.find();
+app.get("/activemusic", async (req, res) => {
+  try {
+    const music = await Music.find();
     res.status(200).json(music);
-  }catch(error){
+  } catch (error) {
     console.error("Error fetching music data:", error);
-    res.status(500).send({ error: "Failed to fetch music data" });
+    res.status(500).json({ message: "Music not uploaded succesfully" });
   }
-})
+});
