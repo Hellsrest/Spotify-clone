@@ -1,0 +1,88 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.15 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.15">
+  <diagram name="Page-1" id="ew5MH58z3Pb4PIQpVB7E">
+    <mxGraphModel dx="2200" dy="1430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" width="130" height="2030" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-12" value="Create" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-13" value="View" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="140" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-14" value="Update" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="230" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-15" value="Delete Own" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-16" value="Delete" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="410" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-17" value="Create" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-18" value="View" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="590" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-19" value="Update" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="680" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-20" value="Delete Own" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="770" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-21" value="Delete" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="860" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-22" value="Like" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="950" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-23" value="Unlike" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1040" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-26" value="Create" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1130" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-27" value="View" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1220" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-28" value="Update" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1310" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-29" value="Delete Own" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1400" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-30" value="Delete" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-31" value="Create" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1580" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-32" value="View" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1670" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-33" value="Update" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1760" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-34" value="Delete Own" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1850" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-35" value="Delete" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1940" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-36" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="350" width="80" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-38" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1560" width="80" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="GvzlDJ0Od_AwIQ3vXJNY-39" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="710" y="1020" width="80" height="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

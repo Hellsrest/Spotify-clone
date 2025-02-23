@@ -1,0 +1,91 @@
+This is a chat for documentation of an online music streaming platform created using the MERN stack. The platform will provide users with music uploaded by artists. The music's can be played in full or the artists can place the best parts of the songs which will be played to the users. So, for a three-minute-long song, the artist can specify to play the part of the music from 0:30 to 0:40 seconds to the user. The user, upon login, can listen to the songs and either like them or not like them. Upon liking, the song will be saved to their liked playlist from which the user can listen to the songs they liked or can create new playlisitsts of their own. The songs provided to the users will also be recomnded to them by using an algorithm. The UI of the system will also be like that of tinder , where users can swipe right to like the song and swipe left to unlike the song.
+
+The platform will have 3 entitles, the user, the artist and the admin. The user is the entity which can listen to the music, like the music they listen to, view all their liked songs and create new playlists of songs which they have liked. The artist can do all the things as the user but can also upload music. The admin is the overseer of the system and can delete accounts or music's uploaded by the artist.
+
+Do you understand my vision. Do i need to clarify any points further? If you donot understand me ask for clarifications. DONOT RUN OFF WHEN YOU ARE NOT SURE, ALWAYS ASK FOR CLARIFICATION IF YOU ARE NOT SURE. This will be the main documentation chat, where we will mostly discuss about the documentation for the project. The coding portion will be done in another chatroom. BUT SAVE THIS IN YOUR MEMORY!!
+
+----------------------------------------------------------------------------
+
+Preview System: Can artists choose multiple preview segments for a song, or just one?
+
+the user can have three preview segments and they shall be prioritized. The first segment will be played first regardless of where it is in the song. Then the next and then the next. upon the thired preview being ended, the song will autoswipe to the next song without liking, so it will be like if the user didnot like the song.
+
+Recommendation Algorithm: Do you have any preferences for how recommendations should work? (e.g., based on likes, listening history, or something else?)
+
+I do not know exactly how to do this part and this is the main focus for the project. The current assumption is that the users' statistics like their like history will be the main deciding factor. The genera, the bpm and the average length of the preview the user likes, the artist will be the deciding factor. These thing will most likely be fed to a linear regesion model or smth which will help in deciding the next song for the user
+
+User Playlists: Can users add any song to a playlist, or only the ones they've liked?
+for now only the songs they have liked will be able to be placed in playlists. This is because i donot know how to properly create or use a search system lol. This might change in the future.
+
+anything else?
+
+------------------------------------------------------------------------------
+
+Auto-Swipe Timeout: If a user doesn't interact, will the system wait for the full third preview to finish before auto-swiping?
+
+yes. After the third preview is finished the song will auto swipe.
+
+Recommendation Adjustments: Will the recommendation algorithm update in real time as users like/dislike songs, or will it be updated periodically (e.g., daily)?
+
+i donot know about this. Right now i want it to be realtime but i dont know how to do it. The recomendation algorithm is the main focus of this project. The ui and the layout to be created, i am already familiar with but not how to make a recomendation system. So i do not know for now how i will do it
+
+------------------------------------------------------------------------------
+GPT:
+Overview
+This is an online music streaming platform built with the MERN stack. The platform features a Tinder-style UI where users swipe right to like songs and left to dislike them. Music is uploaded by artists, and users can listen to full songs or previews set by the artist. A recommendation algorithm will suggest songs based on user preferences.
+
+Key Features
+User Interactions
+
+Users can listen to songs and like/dislike them.
+Liked songs are saved to a "Liked Songs" list.
+Users can create playlists but can only add songs they have liked.
+Artist Features
+
+Artists can upload songs.
+They can define up to three preview segments per song, played in order of priority.
+If a user does not like the song after the third preview, it auto-swipes to the next song.
+Admin Capabilities
+
+Admins can manage users and content, including deleting accounts or songs.
+Recommendation System (Main Focus of the Project)
+
+Songs will be recommended based on user statistics, including:
+Like history
+Genre preferences
+BPM
+Average length of previewed songs
+Artist preferences
+A linear regression model or a similar approach might be used.
+Ideally, the recommendation system should update in real-time based on user interactions.
+Auto-Swipe Behavior
+
+If a user does not interact, the system waits for the third preview to finish before auto-swiping to the next song.
+Future Considerations
+
+Search functionality is not planned for now but may be added later.
+The real-time recommendation system is still being explored, and different techniques will be considered.
+Let me know if I missed anything or if you'd like to refine something!
+------------------------------------------------------------------------------
+Ok good. You have a good basic understanding of the system. Now we will be working on the initial proposal for the system. I will provide you with an Introduction of a project i have worked on previously. You need to look at the introduction i have provided and create a similar introduction paragraph which will have similar styling to the old one. DO NOT  DELVEE TO DEEPLY INTO DETAILS IN THIS INTRODUCTION PARAGRAPH.TRY TO KEEP A SIMILAR VIDE TO THE INTRODUCTION I HAVE PROVIDED BELLOW. I will provide the sample introduction paragraph bellow:
+------------------------------------------------------------------------------
+This is perfect. Now we ar moving to the problem statement portion. Here, i will proide a sample paragraph and you will need to provide me a problem statement paragraph with the same vibe as the sample. BUT, I want you to actually research and put proper references in the problem statement. I want you to find problems related with modern streaming services, music delivery and streaming culture WITH PROPER SOURCES and link them properly in the IEEE format. I HAVE ALREADY TOLD YOU THAT YOU MUST COMMUNICATE WITH ME IF YOU DONOT UNDERSTAND ANY PART BTW, IF YOU ARE CONFUSED ASK ME FOR FURTHER CLARIFICATIONS. I will place the sample problem statement bellow:
+------------------------------------------------------------------------------
+Perfect. Next I will provide you with an objectives paragraph with three bullet points. You will need to turn it into the objectives of the current project but keep the same vibe as the sample i will provide. The sample is provided bellow:
+------------------------------------------------------------------------------
+Perfect. Next we will move on to the study of existing systems portion. I will provide you with a sample and you will provide me with a responce tailored to this current system but with the same vibe as the sample provided. I WANT YOU TO ACTAULLY FIND SOME PROBLEMS WITH EXISING SYSTEMS USING PROPER SOURCES. I ALSO WANT YOU TO UNDERSTAND THAT THIS SYSTEM WILL BE TARGETED TO THE YOUNGER GENERATION WITH SHOR ATTENTION SPANS, thats why we have the whole preview system. I will provide you with the sample bellow:
+-----------------------------------------------------------------------------
+Perfect. Now we will move on to the requirement collection section. I will provide you with the sample and here, you will just need to change the words and sentences around so that it says the same thing in a different way. Try not to alter any content here, just rephrase it so that the meaning is same, but the words used are different. I will provide the sample bellow:
+-----------------------------------------------------------------------------
+Perfect. Now we will move on to the economic and operational feasibility section. I will provide you with the sample and here, you will just need to change the words and sentences around so that it says the same thing in a different way. Try not to alter any content here, just rephrase it so that the meaning is same, but the words used are different. I will provide the sample bellow:
+-----------------------------------------------------------------------------
+Perfect. Now we will move on to the EXPECTED OUTCOME section. I will provide you with the sample and here, you will just need to change the words and sentences around so that it says the same thing in a different way. Try not to alter any content here, just rephrase it so that the meaning is same, but the words used are different. I will provide the sample bellow:
+-----------------------------------------------------------------------------
+can you give four bullet points describing the entire project. I will provide you with a sample too. The sample is provided bellow:
+------------------------------------------------------------------------------------------------------------------
+good. Now provide me with three objectives of this project
+------------------------------------------------------------------------------------------------------------------
+Here, can you give me points for the current system. Keep the vibe same. Also make sure that the points are not too long
+------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------
