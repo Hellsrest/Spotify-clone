@@ -5,7 +5,7 @@ import User from "./Models/Users.js";
 import multer from "multer";
 import path from "path";
 import Music from "./Models/Musics.js";
-
+import Like from "./Models/Likes.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -106,5 +106,26 @@ app.get("/activemusic", async (req, res) => {
   } catch (error) {
     console.error("Error fetching music data:", error);
     res.status(500).json({ message: "Music not uploaded succesfully" });
+  }
+});
+
+//like music
+app.post("/likemusic", async (req, res) => {
+  const { userid, musicid } = req.body;
+  try {
+    const likemusic = new Like ({
+      userid: userid,
+      musicid: musicid,
+    });
+
+    const likedmusic = await likemusic.save();
+    console.log(likedmusic);
+    if (likedmusic) {
+      res.status(200).json({ message: "Music liked succesfully" });
+    }
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Music Not liked" });
   }
 });
