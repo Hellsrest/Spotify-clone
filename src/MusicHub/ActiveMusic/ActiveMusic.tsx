@@ -7,7 +7,10 @@ interface Music {
   musicname: string;
   musictitle: string;
   musiclocation: string;
-  uploaderid: string;
+  uploaderid: {
+    _id: string;
+    uusername: string;
+  };
 }
 
 interface likemusic {
@@ -59,7 +62,7 @@ function ActiveMusic() {
         userid: userdetails?.uid ? userdetails.uid.toString() : "",
         musicid: musicId,
       };
-      
+
       const response = await fetch("http://localhost:5000/likemusic", {
         method: "POST",
         headers: {
@@ -67,7 +70,7 @@ function ActiveMusic() {
         },
         body: JSON.stringify(likedmusic),
       });
-      
+
       if (response.ok) {
         const data = await response.json();
         console.log("Like successful:", data);
@@ -83,24 +86,19 @@ function ActiveMusic() {
   const handleDragEnd = async (_event: any, info: any) => {
     const offset = info.offset.x;
     if (offset < -100) {
-      // Left swipe - just go to next music
       setDirection(-1);
       setSwipeCount((prev) => ({ ...prev, left: prev.left + 1 }));
       moveToNextMusic();
     } else if (offset > 100) {
-      // Right swipe - like the music and go to next
       setDirection(1);
       setSwipeCount((prev) => ({ ...prev, right: prev.right + 1 }));
-      
-      // Prevent going to next music immediately to allow animation
+
       setIsLiked(true);
-      
-      // Send like to server if there's music to like
+
       if (currentIndex < musicList.length) {
         await sendLikeToServer(musicList[currentIndex]._id);
       }
-      
-      // Short delay to allow animation to complete
+
       setTimeout(() => {
         moveToNextMusic();
         setIsLiked(false);
@@ -110,21 +108,17 @@ function ActiveMusic() {
 
   const likemusic = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    
+
     if (currentIndex >= musicList.length) return;
-    
+
     try {
-      // First, set the liked state to trigger animation
       setIsLiked(true);
       setDirection(1);
-      
-      // Update the swipe count for right swipes
+
       setSwipeCount((prev) => ({ ...prev, right: prev.right + 1 }));
-      
-      // Send the like to the server
+
       await sendLikeToServer(musicList[currentIndex]._id);
-      
-      // Short timeout to allow the animation to be visible
+
       setTimeout(() => {
         moveToNextMusic();
         setIsLiked(false);
@@ -177,10 +171,10 @@ function ActiveMusic() {
             dragConstraints={constraintsRef}
             onDragEnd={handleDragEnd}
             initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ 
-              scale: 1, 
+            animate={{
+              scale: 1,
               opacity: 1,
-              x: isLiked ? 500 : 0 
+              x: isLiked ? 500 : 0,
             }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
@@ -189,11 +183,19 @@ function ActiveMusic() {
               <h5 className="card-title">
                 {musicList[currentIndex].musictitle}
               </h5>
+
               <p className="card-text">
                 {musicList[currentIndex].musicname ||
                   "No description available."}
               </p>
-              <button 
+
+              {/* Display uploader username */}
+              <p className="text-muted">
+                Uploaded by:{" "}
+                {musicList[currentIndex].uploaderid?.uusername || "Unknown"}
+              </p>
+
+              <button
                 onClick={likemusic}
                 disabled={isLiked}
                 style={{
@@ -203,7 +205,7 @@ function ActiveMusic() {
                   border: "none",
                   borderRadius: "4px",
                   cursor: isLiked ? "default" : "pointer",
-                  marginBottom: "10px"
+                  marginBottom: "10px",
                 }}
               >
                 {isLiked ? "Liked!" : "Like"}

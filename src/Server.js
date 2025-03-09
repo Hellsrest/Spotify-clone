@@ -98,16 +98,18 @@ app.post("/musicupload", upload.single("tracklocation"), async (req, res) => {
   }
 });
 
-// to get the music from db
+// to get the music from db along with uploader details
 app.get("/activemusic", async (req, res) => {
   try {
-    const music = await Music.find();
+    const music = await Music.find().populate("uploaderid", "uusername uemail");
     res.status(200).json(music);
+    console.log(music);
   } catch (error) {
     console.error("Error fetching music data:", error);
-    res.status(500).json({ message: "Music not uploaded succesfully" });
+    res.status(500).json({ message: "Music not fetched successfully" });
   }
 });
+
 
 //like music
 app.post("/likemusic", async (req, res) => {
