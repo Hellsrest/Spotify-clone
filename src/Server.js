@@ -77,12 +77,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.post("/musicupload", upload.single("tracklocation"), async (req, res) => {
-  const { trackname,musictitle, trackuploader } = req.body;
+  const { trackname, musictitle, trackuploader } = req.body;
   const tracklocation = req.file ? `/uploads/${req.file.filename}` : "";
   try {
     const umusic = new Music({
       musicname: trackname,
-      musictitle:musictitle,
+      musictitle: musictitle,
       musiclocation: tracklocation,
       uploaderid: trackuploader,
     });
@@ -113,7 +113,7 @@ app.get("/activemusic", async (req, res) => {
 app.post("/likemusic", async (req, res) => {
   const { userid, musicid } = req.body;
   try {
-    const likemusic = new Like ({
+    const likemusic = new Like({
       userid: userid,
       musicid: musicid,
     });
@@ -123,9 +123,38 @@ app.post("/likemusic", async (req, res) => {
     if (likedmusic) {
       res.status(200).json({ message: "Music liked succesfully" });
     }
-
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Music Not liked" });
+  }
+});
+
+// to get the liked music of user from db
+app.get("/likedmusic/:userId", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    console.log(userId);
+    // Validate if userId is a valid MongoDB ObjectId
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: "Invalid User ID" });
+    }
+
+    // Find all likes associated with the user
+    const likedMusic = await Like.find({ userid: userId });
+
+    if (likedMusic.length === 0) {
+      return res.status(200).json([]); // No liked music found
+    }
+
+    // Extract all music IDs that the user has liked
+    const musicIds = likedMusic.map((item) => item.musicid);
+
+    // Fetch all music details corresponding to the liked music IDs
+    const musicDetails = await Music.find({ _id: { $in: musicIds } });
+
+    return res.status(200).json(musicDetails);
+  } catch (error) {
+    console.error("Error fetching liked music:", error);
+    return res.status(500).json({ message: "Failed to fetch liked music" });
   }
 });
