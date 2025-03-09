@@ -13,6 +13,8 @@ import MainHub from "./MusicHub/MainHub";
 import MusicUpload from "./MusicHub/MusicUpload";
 import MusicLiked from "./MusicHub/MusicLiked";
 
+import UserProfile from "./MusicHub/UserProfile";
+
 function App() {
   return (
     <>
@@ -26,6 +28,7 @@ function App() {
           <Route path="/main" element={<MusicLayout><MainHub/></MusicLayout>}/>
           <Route path="/upload" element={<MusicLayout><MusicUpload/></MusicLayout>}/>
           <Route path="/liked" element={<MusicLayout><MusicLiked/></MusicLayout>}/>
+          <Route path="/userprofile" element={<MusicLayout><UserProfile/></MusicLayout>}/>
         </Routes>
       </Router>
     </>

@@ -41,7 +41,6 @@ function MusicUpload() {
     console.log(musictitle);
     console.log(userdetails?.uid);
     const formData = new FormData();
-
     formData.append("trackname", trackname);
     formData.append("musictitle", musictitle);
     formData.append("tracklocation", Uploadedmusicfile, Uploadedmusicfile.name);

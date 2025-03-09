@@ -158,3 +158,25 @@ app.get("/likedmusic/:userId", async (req, res) => {
     return res.status(500).json({ message: "Failed to fetch liked music" });
   }
 });
+
+//to update user profile
+app.post("/updateuser", async (req, res) => {
+  const { id,uusername,uemail, upassword } = req.body;
+  try {
+    const user = await User.findById(id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const updatedUser = await User.findByIdAndUpdate(
+      id,
+      { uusername, uemail, upassword }, 
+      { new: true } 
+    );
+    res
+    .status(201)
+    .json({ message: "User updated successfully", user: updatedUser });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "user not found" });
+  }
+});
