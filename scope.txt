@@ -35,4 +35,5 @@ Has properties like name, track duration, track description etc
 can be updated by admin or users who have uploaded music
 
 Some sort of music recomendation system
+Music recomendation done by ucb1 and epsilon greedy algorithm
 

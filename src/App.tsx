@@ -13,7 +13,8 @@ import MainHub from "./MusicHub/MainHub";
 import MusicUpload from "./MusicHub/MusicUpload";
 import MusicLiked from "./MusicHub/MusicLiked";
 
-import UserProfile from "./MusicHub/UserProfile";
+import UserProfileUpdate from "./MusicHub/UserProfile/UserProfileUpdate";
+import UserProfileDisplay from "./MusicHub/UserProfile/UserProfileDisplay";
 
 function App() {
   return (
@@ -28,7 +29,9 @@ function App() {
           <Route path="/main" element={<MusicLayout><MainHub/></MusicLayout>}/>
           <Route path="/upload" element={<MusicLayout><MusicUpload/></MusicLayout>}/>
           <Route path="/liked" element={<MusicLayout><MusicLiked/></MusicLayout>}/>
-          <Route path="/userprofile" element={<MusicLayout><UserProfile/></MusicLayout>}/>
+
+          <Route path="/userprofiledisplay" element={<MusicLayout><UserProfileDisplay/></MusicLayout>}/>
+          <Route path="/userprofileupdate" element={<MusicLayout><UserProfileUpdate/></MusicLayout>}/>
         </Routes>
       </Router>
     </>

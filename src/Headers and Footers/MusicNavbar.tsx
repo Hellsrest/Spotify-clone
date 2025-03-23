@@ -61,7 +61,7 @@ function MusicNavbar() {
             </NavLink>
           </li>
                     <li className="nav-item">
-            <NavLink to="/userprofile" className="nav-link">
+            <NavLink to="/userprofileupdate" className="nav-link">
             {userdetails?.uusername || "guestid"}
             </NavLink>
           </li>

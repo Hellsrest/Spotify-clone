@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
-import { defaultUserContext } from "../Layouts/MusicLayout";
+import { defaultUserContext } from "../../Layouts/MusicLayout";
 
-function UserProfile() {
+function UserProfileUpdate() {
   const userContext = useContext(defaultUserContext);
   if (!userContext) {
     throw new Error("MusicNavbar must be used within a Provider");
@@ -100,4 +100,4 @@ function UserProfile() {
     </>
   );
 }
-export default UserProfile;
+export default UserProfileUpdate;

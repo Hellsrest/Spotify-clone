@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { defaultUserContext } from "../../Layouts/MusicLayout";
+import { NavLink } from "react-router-dom";
 
 interface Music {
   _id: string;
@@ -129,6 +130,12 @@ function ActiveMusic() {
     }
   };
 
+
+  const handleUserClick = () => {
+    sessionStorage.setItem("selectedUserId", musicList[currentIndex].uploaderid._id);
+  };
+  
+
   return (
     <div
       ref={constraintsRef}
@@ -190,10 +197,13 @@ function ActiveMusic() {
               </p>
 
               {/* Display uploader username */}
+              <NavLink to="/userprofiledisplay" className="nav-link" onClick={handleUserClick}>
               <p className="text-muted">
                 Uploaded by:{" "}
                 {musicList[currentIndex].uploaderid?.uusername || "Unknown"}
-              </p>
+              </p>     
+              </NavLink>
+
 
               <button
                 onClick={likemusic}

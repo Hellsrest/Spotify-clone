@@ -103,12 +103,13 @@ app.get("/activemusic", async (req, res) => {
   try {
     const music = await Music.find().populate("uploaderid", "uusername uemail");
     res.status(200).json(music);
-    console.log(music);
   } catch (error) {
     console.error("Error fetching music data:", error);
     res.status(500).json({ message: "Music not fetched successfully" });
   }
 });
+
+
 
 
 //like music
@@ -136,23 +137,29 @@ app.get("/likedmusic/:userId", async (req, res) => {
   try {
     const userId = req.params.userId;
     console.log(userId);
+
     // Validate if userId is a valid MongoDB ObjectId
     if (!mongoose.Types.ObjectId.isValid(userId)) {
       return res.status(400).json({ message: "Invalid User ID" });
     }
 
-    // Find all likes associated with the user
-    const likedMusic = await Like.find({ userid: userId });
+    // Find all liked music with music details and uploader details in one query
+    const likedMusic = await Like.find({ userid: userId })
+      .populate({
+        path: "musicid", // Populate the music details
+        populate: {
+          path: "uploaderid", // Populate uploader details inside musicid
+          select: "uusername uemail", // Select only the fields you need
+        },
+      });
 
-    if (likedMusic.length === 0) {
-      return res.status(200).json([]); // No liked music found
+    // If no liked music is found, return an empty array
+    if (!likedMusic.length) {
+      return res.status(200).json([]);
     }
 
-    // Extract all music IDs that the user has liked
-    const musicIds = likedMusic.map((item) => item.musicid);
-
-    // Fetch all music details corresponding to the liked music IDs
-    const musicDetails = await Music.find({ _id: { $in: musicIds } });
+    // Extract music details from likedMusic (since `Like` schema contains `musicid` reference)
+    const musicDetails = likedMusic.map((like) => like.musicid);
 
     return res.status(200).json(musicDetails);
   } catch (error) {
@@ -160,6 +167,7 @@ app.get("/likedmusic/:userId", async (req, res) => {
     return res.status(500).json({ message: "Failed to fetch liked music" });
   }
 });
+
 
 //to update user profile
 app.post("/updateuser", async (req, res) => {
