@@ -63,7 +63,7 @@ app.post("/register", async (req, res) => {
 //to upload music
 app.use("/uploads", express.static("public/uploads"));
 
-// 🔹 Set up Multer for file uploads
+//  Set up Multer 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "public/uploads/"); // Save files in the uploads folder
@@ -86,6 +86,19 @@ app.post("/musicupload", upload.single("tracklocation"), async (req, res) => {
       musiclocation: tracklocation,
       uploaderid: trackuploader,
     });
+
+    // Python script for metadata extraction
+    const { exec } = require("child_process");
+    const pythonPath = "python"; // Or full path to python.exe
+    const scriptPath = "src/python/MusicMetadata.py";
+
+    exec(`${pythonPath} ${scriptPath} "${filepath}" "${savedMusic._id}"`, (error, stdout, stderr) => {
+      if (error) console.error(`Python script error: ${error}`);
+      if (stderr) console.error(`Python stderr: ${stderr}`);
+      console.log(`Python output: ${stdout}`);
+    });
+
+
     const uploadedmusic = await umusic.save();
     console.log(uploadedmusic);
     if (uploadedmusic) {

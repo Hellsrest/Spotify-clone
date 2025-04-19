@@ -1,3 +1,5 @@
+lib
+
 CRUD on User
 CRUD on Admin
 CRUD on Music
@@ -37,3 +39,9 @@ can be updated by admin or users who have uploaded music
 Some sort of music recomendation system
 Music recomendation done by ucb1 and epsilon greedy algorithm
 
+ok. So basically i will need to change both the music fetching endpoint so that only recommended songs are sent and the upload process also needs to be expanded upon by getting song metadata and storing in the database.
+
+ignore feature
+public/private/only me
+song can chage privicy level
+like music shuffel-most payed must come on top
