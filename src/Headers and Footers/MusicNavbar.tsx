@@ -10,7 +10,7 @@ function MusicNavbar() {
     throw new Error("MusicNavbar must be used within a Provider");
   }
 
-  const { setUserDetails,userdetails } = userContext;
+  const { setUserDetails, userdetails } = userContext;
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
@@ -60,9 +60,14 @@ function MusicNavbar() {
               Home
             </NavLink>
           </li>
-                    <li className="nav-item">
+          <li className="nav-item">
             <NavLink to="/userprofileupdate" className="nav-link">
-            {userdetails?.uusername || "guestid"}
+              {userdetails?.uusername || "guestid"}
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/playlists" className="nav-link">
+              Playlists
             </NavLink>
           </li>
           <li className="nav-item">
