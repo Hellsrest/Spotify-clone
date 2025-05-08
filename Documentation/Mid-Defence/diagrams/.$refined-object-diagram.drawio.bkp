@@ -1,0 +1,83 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.15 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.15">
+  <diagram name="Page-1" id="hidpfYoUny9nWj7PErps">
+    <mxGraphModel dx="1100" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Comments&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: 1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ musicid: 1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ userid: User1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ comment: Comment1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ publishdate:2025/01/01&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="330" y="485" width="160" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Musics&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+id:1&lt;br&gt;+musicname:song1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+musictitle:Song1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+musiclocation:public\uploads\song1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+uploaderid:user1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="290" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Playlists&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+id:1&lt;br&gt;+userid:User1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+name:Playlist1&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+playlistcreateddate:2025/01/02&lt;br&gt;&lt;/span&gt;+songs:[song1]&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="860" y="480" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Likes&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ userid: user1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ musicid: song1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ date: 2025/01/02&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="750" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Users&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+uid:User1&lt;br&gt;+uusername: user1&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+uemail:user1@gmail.com&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+upassword:User@1&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="585" y="520" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-13" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.011;exitY=0.599;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="U9tjIL40-Au9NCdkh5iq-2" target="U9tjIL40-Au9NCdkh5iq-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="420" as="sourcePoint" />
+            <mxPoint x="410" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="460" y="340" />
+              <mxPoint x="360" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-16" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="U9tjIL40-Au9NCdkh5iq-5" target="U9tjIL40-Au9NCdkh5iq-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="730" as="sourcePoint" />
+            <mxPoint x="760" y="680" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="780" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-17" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="U9tjIL40-Au9NCdkh5iq-5" target="U9tjIL40-Au9NCdkh5iq-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780" y="740" as="sourcePoint" />
+            <mxPoint x="830" y="690" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="680" y="690" />
+              <mxPoint x="665" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-18" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="U9tjIL40-Au9NCdkh5iq-5" target="U9tjIL40-Au9NCdkh5iq-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="500" as="sourcePoint" />
+            <mxPoint x="780" y="450" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-19" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="U9tjIL40-Au9NCdkh5iq-3" target="U9tjIL40-Au9NCdkh5iq-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="390" as="sourcePoint" />
+            <mxPoint x="920" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="910" y="410" />
+              <mxPoint x="870" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U9tjIL40-Au9NCdkh5iq-20" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.012;entryY=0.642;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="U9tjIL40-Au9NCdkh5iq-5" target="U9tjIL40-Au9NCdkh5iq-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="680" as="sourcePoint" />
+            <mxPoint x="570" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="570" y="600" />
+              <mxPoint x="520" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
