@@ -184,6 +184,18 @@ app.get("/likedmusic/:userId", async (req, res) => {
   }
 });
 
+// Get user by ID
+app.get('/user/:id', async (req, res) => {
+  const user = await User.findById(req.params.id);
+  if (!user) return res.status(404).json({ message: "User not found" });
+  res.json(user);
+});
+
+// Get music uploaded by user
+app.get('/music/byuser/:id', async (req, res) => {
+  const musicList = await Music.find({ uploaderid: req.params.id });
+  res.json(musicList);
+});
 
 //to update user profile
 app.post("/updateuser", async (req, res) => {

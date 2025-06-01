@@ -4,26 +4,27 @@ import { defaultUserContext } from "../../Layouts/MusicLayout";
 function UserProfileUpdate() {
   const userContext = useContext(defaultUserContext);
   if (!userContext) {
-    throw new Error("MusicNavbar must be used within a Provider");
+    throw new Error("UserProfileUpdate must be used within a Provider");
   }
-  const {userdetails } = userContext;
+  const { userdetails } = userContext;
 
   const [uusername, setUusername] = useState<string>(userdetails?.uusername || "");
   const [uemail, setUemail] = useState<string>(userdetails?.uemail || "");
   const [upassword, setUpassword] = useState<string>(userdetails?.upassword || "");
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
-  interface uuser {
-    id:string;
-    uusername:string;
+  interface UUser {
+    id: string;
+    uusername: string;
     uemail: string;
     upassword: string;
   }
 
-  function handleUsernamechange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleUsernameChange(e: React.ChangeEvent<HTMLInputElement>) {
     setUusername(e.target.value);
   }
 
-  function handleEmailchange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleEmailChange(e: React.ChangeEvent<HTMLInputElement>) {
     setUemail(e.target.value);
   }
 
@@ -31,73 +32,108 @@ function UserProfileUpdate() {
     setUpassword(e.target.value);
   }
 
-  const updateProfile=async(e:React.MouseEvent<HTMLButtonElement>)=>{
+  const validateForm = (): boolean => {
+    if (!uusername || !uemail || !upassword) {
+      setErrorMsg("All fields are required.");
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(uemail)) {
+      setErrorMsg("Invalid email format.");
+      return false;
+    }
+    if (upassword.length < 6) {
+      setErrorMsg("Password must be at least 6 characters long.");
+      return false;
+    }
+    setErrorMsg("");
+    return true;
+  };
+
+  const updateProfile = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const updatedata: uuser = {
-        id:userdetails?.uid||"",
-        uusername:uusername,
-        uemail: uemail,
-        upassword: upassword,
-      };
-      console.log(updatedata);
+    if (!validateForm()) return;
+
+    const updatedData: UUser = {
+      id: userdetails?.uid || "",
+      uusername,
+      uemail,
+      upassword,
+    };
+
+    try {
       const response = await fetch("http://localhost:5000/updateuser", {
         method: "POST",
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedata),
+        body: JSON.stringify(updatedData),
       });
-      console.log(response);
-  }
 
-  
+      const result = await response.json();
+      console.log(result);
+
+      if (response.ok) {
+        alert("Profile updated successfully!");
+      } else {
+        setErrorMsg(result.message || "Update failed.");
+      }
+    } catch (error) {
+      setErrorMsg("Server error. Please try again later.");
+    }
+  };
+
   return (
-    <>
-      <form className="row g-3">
+    <div className="container mt-5" style={{ maxWidth: "500px" }}>
+      <h2 className="mb-4 text-center">Update Profile</h2>
+
+      {errorMsg && <div className="alert alert-danger">{errorMsg}</div>}
+
+      <form>
         <div className="mb-3">
-          <label htmlFor="formGroupExampleInput" className="form-label">
-            Username
-          </label>
+          <label htmlFor="username" className="form-label">Username</label>
           <input
             type="text"
+            id="username"
             className="form-control"
-            id="formGroupExampleInput"
-            placeholder="Example input placeholder"
+            placeholder="Enter new username"
             value={uusername}
-            onChange={handleUsernamechange}
+            onChange={handleUsernameChange}
           />
         </div>
+
         <div className="mb-3">
-          <label htmlFor="formGroupExampleInput2" className="form-label">
-            Email
-          </label>
+          <label htmlFor="email" className="form-label">Email</label>
           <input
-            type="text"
+            type="email"
+            id="email"
             className="form-control"
-            id="formGroupExampleInput2"
-            placeholder="Another input placeholder"
+            placeholder="Enter new email"
             value={uemail}
-            onChange={handleEmailchange}
+            onChange={handleEmailChange}
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="formGroupExampleInput" className="form-label">
-           Password
-          </label>
+
+        <div className="mb-4">
+          <label htmlFor="password" className="form-label">Password</label>
           <input
-            type="text"
+            type="password"
+            id="password"
             className="form-control"
-            id="formGroupExampleInput"
-            placeholder="Example input placeholder"
+            placeholder="Enter new password"
             value={upassword}
             onChange={handlePasswordChange}
           />
         </div>
-        <button type="submit" onClick={updateProfile} className="btn btn-primary">
-          Upload
-        </button>
+
+        <div className="d-grid">
+          <button type="submit" onClick={updateProfile} className="btn btn-primary">
+            Update Profile
+          </button>
+        </div>
       </form>
-    </>
+    </div>
   );
 }
+
 export default UserProfileUpdate;

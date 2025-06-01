@@ -61,9 +61,17 @@ function MusicNavbar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/userprofileupdate" className="nav-link">
-              {userdetails?.uusername || "guestid"}
-            </NavLink>
+          <NavLink
+  to="/userprofiledisplay"
+  className="nav-link"
+  onClick={() => {
+    if (userdetails?.uid) {
+      sessionStorage.setItem("selectedUserId", userdetails.uid);
+    }
+  }}
+>
+  {userdetails?.uusername || "guestid"}
+</NavLink>
           </li>
           <li className="nav-item">
             <NavLink to="/playlists" className="nav-link">
